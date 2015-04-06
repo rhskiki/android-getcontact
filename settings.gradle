@@ -1,2 +1,2 @@
-include ':android-getcontact-test'
+include ':android-getcontact-example'
 include ':android-getcontact'
