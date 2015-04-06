@@ -1,0 +1,2 @@
+include ':android-getcontact-test'
+include ':android-getcontact'
