@@ -16,12 +16,17 @@
 
 package com.rhskiki.getcontact.model.base;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import com.rhskiki.getcontact.utils.GetContactUtils.ParcelableId;
+
 /**
  * This class is used for storage number phones.
  *
  * @see android.provider.ContactsContract.CommonDataKinds.Phone
  */
-public class GcPhone {
+public class GcPhone implements Parcelable {
 
     /**
      * Label of number.
@@ -96,5 +101,38 @@ public class GcPhone {
      */
     public void setType(int type) {
         this.mType = type;
+    }
+
+    // Parcelable Implementation.
+    private GcPhone(Parcel from) {
+        mLabel = from.readString();
+        mNumber = from.readString();
+        mType = from.readInt();
+    }
+
+    public static final Parcelable.Creator<GcPhone> CREATOR = new Creator<GcPhone>() {
+
+        @Override
+        public GcPhone createFromParcel(Parcel source) {
+            return new GcPhone(source);
+        }
+
+        @Override
+        public GcPhone[] newArray(int size) {
+            return new GcPhone[size];
+        }
+    };
+
+
+    @Override
+    public int describeContents() {
+        return ParcelableId.GCPHONE;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(mLabel);
+        dest.writeString(mNumber);
+        dest.writeInt(mType);
     }
 }

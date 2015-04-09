@@ -16,12 +16,17 @@
 
 package com.rhskiki.getcontact.model.base;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import com.rhskiki.getcontact.utils.GetContactUtils.ParcelableId;
+
 /**
  * This model for data emails.
  *
  * @see android.provider.ContactsContract.CommonDataKinds.Email
  */
-public class GcEmail {
+public class GcEmail implements Parcelable {
 
     /**
      * Email address of contact.
@@ -105,5 +110,37 @@ public class GcEmail {
      */
     public void setType(int mType) {
         this.mType = mType;
+    }
+
+    // Parcelable Implementation.
+    private GcEmail(Parcel from) {
+        mAddress = from.readString();
+        mLabel = from.readString();
+        mType = from.readInt();
+    }
+
+    public static final Parcelable.Creator<GcEmail> CREATOR = new Creator<GcEmail>() {
+
+        @Override
+        public GcEmail createFromParcel(Parcel source) {
+            return new GcEmail(source);
+        }
+
+        @Override
+        public GcEmail[] newArray(int size) {
+            return new GcEmail[size];
+        }
+    };
+
+    @Override
+    public int describeContents() {
+        return ParcelableId.GCEMAIL;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(mAddress);
+        dest.writeString(mLabel);
+        dest.writeInt(mType);
     }
 }

@@ -16,10 +16,15 @@
 
 package com.rhskiki.getcontact.model.base;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import com.rhskiki.getcontact.utils.GetContactUtils.ParcelableId;
+
 /**
  * This model for data names.
  */
-public class GcName {
+public class GcName implements Parcelable {
 
     /**
      * Display contact name.
@@ -256,5 +261,49 @@ public class GcName {
      */
     public void setSuffix(String suffix) {
         this.mSuffix = suffix;
+    }
+
+    // Parcelable Implementation.
+    private GcName(Parcel from) {
+        mDisplayName = from.readString();
+        mFamilyName = from.readString();
+        mGivenName = from.readString();
+        mMiddleName = from.readString();
+        mPhoneticFamilyName = from.readString();
+        mPhoneticGivenName = from.readString();
+        mPhoneticMiddleName = from.readString();
+        mPrefix = from.readString();
+        mSuffix = from.readString();
+    }
+
+    public static final Parcelable.Creator<GcName> CREATOR = new Creator<GcName>() {
+
+        @Override
+        public GcName createFromParcel(Parcel source) {
+            return new GcName(source);
+        }
+
+        @Override
+        public GcName[] newArray(int size) {
+            return new GcName[size];
+        }
+    };
+
+    @Override
+    public int describeContents() {
+        return ParcelableId.GCNAME;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(mDisplayName);
+        dest.writeString(mFamilyName);
+        dest.writeString(mGivenName);
+        dest.writeString(mMiddleName);
+        dest.writeString(mPhoneticFamilyName);
+        dest.writeString(mPhoneticGivenName);
+        dest.writeString(mPhoneticMiddleName);
+        dest.writeString(mPrefix);
+        dest.writeString(mSuffix);
     }
 }

@@ -16,10 +16,15 @@
 
 package com.rhskiki.getcontact.model.base;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import com.rhskiki.getcontact.utils.GetContactUtils.ParcelableId;
+
 /**
  * This model for website of the contacts.
  */
-public class GcWebsite {
+public class GcWebsite implements Parcelable {
 
     /**
      * Label of website.
@@ -103,5 +108,37 @@ public class GcWebsite {
      */
     public void setUrl(String url) {
         this.mUrl = url;
+    }
+
+    // Parcelable Implementation.
+    private GcWebsite(Parcel from) {
+        mLabel = from.readString();
+        mUrl = from.readString();
+        mType = from.readInt();
+    }
+
+    public static final Parcelable.Creator<GcWebsite> CREATOR = new Creator<GcWebsite>() {
+
+        @Override
+        public GcWebsite createFromParcel(Parcel source) {
+            return new GcWebsite(source);
+        }
+
+        @Override
+        public GcWebsite[] newArray(int size) {
+            return new GcWebsite[size];
+        }
+    };
+
+    @Override
+    public int describeContents() {
+        return ParcelableId.GCWEBSITE;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(mLabel);
+        dest.writeString(mUrl);
+        dest.writeInt(mType);
     }
 }

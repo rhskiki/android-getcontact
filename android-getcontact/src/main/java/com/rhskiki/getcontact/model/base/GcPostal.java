@@ -16,10 +16,15 @@
 
 package com.rhskiki.getcontact.model.base;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import com.rhskiki.getcontact.utils.GetContactUtils.ParcelableId;
+
 /**
  * This model for data postal address.
  */
-public class GcPostal {
+public class GcPostal implements Parcelable {
 
     /**
      * City of contact.
@@ -265,5 +270,50 @@ public class GcPostal {
      */
     public void setType(int type) {
         this.mType = type;
+    }
+
+    // Parcelable Implementation.
+    private GcPostal(Parcel from) {
+        mCity = from.readString();
+        mCountry = from.readString();
+        mFormattedAddress = from.readString();
+        mLabel = from.readString();
+        mNeighborhood = from.readString();
+        mPobox = from.readString();
+        mPostcode = from.readString();
+        mRegion = from.readString();
+        mStreet = from.readString();
+        mType = from.readInt();
+    }
+
+    public static Parcelable.Creator<GcPostal> CREATOR = new Creator<GcPostal>() {
+
+        @Override
+        public GcPostal createFromParcel(Parcel source) {
+            return new GcPostal(source);
+        }
+
+        @Override
+        public GcPostal[] newArray(int size) {
+            return new GcPostal[size];
+        }
+    };
+
+    @Override
+    public int describeContents() {
+        return ParcelableId.GCPOSTAL;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(mCity);
+        dest.writeString(mCountry);
+        dest.writeString(mFormattedAddress);
+        dest.writeString(mLabel);
+        dest.writeString(mNeighborhood);
+        dest.writeString(mPobox);
+        dest.writeString(mPostcode);
+        dest.writeString(mStreet);
+        dest.writeInt(mType);
     }
 }
