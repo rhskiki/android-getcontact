@@ -1,51 +1,31 @@
 package com.rhskiki.teste;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.TextView;
+import android.view.View;
+import android.widget.Button;
 
-import com.rhskiki.getcontact.library.GetContact;
-
-import java.util.List;
-
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends ActionBarActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        GetContact getContact = new GetContact(this);
-        List<String> list = getContact.getAllEmails();
-
-        TextView text = (TextView) findViewById(R.id.text);
-        for(String s:list) {
-            text.setText(text.getText().toString() + " " + s);
-        }
-    }
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
+        Button btnGetEmails = (Button) findViewById(R.id.main_btn_get_emails);
+        btnGetEmails.setOnClickListener(this);
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+    public void onClick(View v) {
+        Intent intent;
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        switch (v.getId()) {
+            case R.id.main_btn_get_emails:
+                intent = new Intent(this, EmailActivity.class);
+                startActivity(intent);
+                break;
         }
-
-        return super.onOptionsItemSelected(item);
     }
 }

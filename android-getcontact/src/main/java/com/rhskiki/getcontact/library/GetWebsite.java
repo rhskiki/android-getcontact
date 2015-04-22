@@ -22,7 +22,6 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.provider.ContactsContract;
 
-import com.rhskiki.getcontact.library.IBaseGetContact;
 import com.rhskiki.getcontact.model.GcWebsite;
 import com.rhskiki.getcontact.utils.GetContactLog;
 import com.rhskiki.getcontact.utils.GetContactUtils;

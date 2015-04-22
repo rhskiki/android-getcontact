@@ -50,7 +50,7 @@ public class GcEmail implements Parcelable {
     private int mType;
 
     /**
-     * The default constructor.
+     * Default constructor.
      */
     public GcEmail() {
         mAddress = null;

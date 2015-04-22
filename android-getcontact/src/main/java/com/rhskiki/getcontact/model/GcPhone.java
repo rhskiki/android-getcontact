@@ -50,6 +50,15 @@ public class GcPhone implements Parcelable {
     private int mType;
 
     /**
+     * Default constructor.
+     */
+    public GcPhone() {
+        mLabel = null;
+        mNumber = null;
+        mType = 0;
+    }
+
+    /**
      * Get label of number phone.
      *
      * @return Label of number phone.

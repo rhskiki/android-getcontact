@@ -89,6 +89,9 @@ public class GcName implements Parcelable {
      */
     private String mSuffix;
 
+    /**
+     *
+     */
     public GcName() {
         mDisplayName = null;
         mFamilyName = null;

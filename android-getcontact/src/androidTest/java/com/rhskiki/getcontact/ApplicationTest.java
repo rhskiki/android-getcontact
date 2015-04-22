@@ -18,8 +18,6 @@ package com.rhskiki.getcontact;
 
 import android.test.InstrumentationTestCase;
 
-import junit.framework.TestCase;
-
 public class ApplicationTest extends InstrumentationTestCase {
 
     public ApplicationTest() {
