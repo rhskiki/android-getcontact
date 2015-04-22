@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.rhskiki.getcontact.library.base;
+package com.rhskiki.getcontact.library;
 
 import android.content.ContentResolver;
 import android.content.Context;
@@ -23,7 +23,7 @@ import android.net.Uri;
 import android.provider.ContactsContract;
 
 import com.rhskiki.getcontact.library.IBaseGetContact;
-import com.rhskiki.getcontact.model.base.GcPostal;
+import com.rhskiki.getcontact.model.GcPostal;
 import com.rhskiki.getcontact.utils.GetContactLog;
 import com.rhskiki.getcontact.utils.GetContactUtils;
 

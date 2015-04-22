@@ -18,11 +18,6 @@ package com.rhskiki.getcontact.model;
 
 import android.net.Uri;
 
-import com.rhskiki.getcontact.model.base.GcEmail;
-import com.rhskiki.getcontact.model.base.GcName;
-import com.rhskiki.getcontact.model.base.GcPhone;
-import com.rhskiki.getcontact.model.base.GcWebsite;
-
 import java.util.List;
 
 /**

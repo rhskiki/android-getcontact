@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.rhskiki.getcontact.model.base;
+package com.rhskiki.getcontact.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;

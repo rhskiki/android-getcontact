@@ -18,7 +18,7 @@ package com.rhskiki.getcontact.model.base;
 
 import android.test.InstrumentationTestCase;
 
-import com.rhskiki.getcontact.model.base.GcPhone;
+import com.rhskiki.getcontact.model.GcPhone;
 
 /**
  * // TODO comment

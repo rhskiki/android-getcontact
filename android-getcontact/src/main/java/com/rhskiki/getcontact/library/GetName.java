@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.rhskiki.getcontact.library.base;
+package com.rhskiki.getcontact.library;
 
 import android.content.ContentResolver;
 import android.content.Context;
@@ -23,7 +23,7 @@ import android.net.Uri;
 import android.provider.ContactsContract;
 
 import com.rhskiki.getcontact.library.IBaseGetContact;
-import com.rhskiki.getcontact.model.base.GcName;
+import com.rhskiki.getcontact.model.GcName;
 import com.rhskiki.getcontact.utils.GetContactLog;
 import com.rhskiki.getcontact.utils.GetContactUtils;
 
@@ -106,7 +106,7 @@ public class GetName implements IBaseGetContact {
      * phonetic family name, phonetic given name, phonetic middle name and suffix.
      *
      * @param contactId Id of contact, if case 0 get all emails.
-     * @return List type {@link com.rhskiki.getcontact.model.base.GcName} with datas.
+     * @return List type {@link com.rhskiki.getcontact.model.GcName} with datas.
      * @see android.provider.ContactsContract.CommonDataKinds.StructuredName
      */
     @Override

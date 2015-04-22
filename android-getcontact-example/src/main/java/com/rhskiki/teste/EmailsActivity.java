@@ -3,6 +3,6 @@ package com.rhskiki.teste;
 /**
  * // TODO comment
  */
-public class emailsActivity {
+public class EmailsActivity {
 
 }

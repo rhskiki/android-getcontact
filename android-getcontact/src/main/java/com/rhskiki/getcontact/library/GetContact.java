@@ -18,17 +18,12 @@ package com.rhskiki.getcontact.library;
 
 import android.content.Context;
 
-import com.rhskiki.getcontact.library.base.GetEmail;
-import com.rhskiki.getcontact.library.base.GetName;
-import com.rhskiki.getcontact.library.base.GetPhone;
-import com.rhskiki.getcontact.library.base.GetPostal;
-import com.rhskiki.getcontact.library.base.GetWebsite;
 import com.rhskiki.getcontact.model.GcContact;
-import com.rhskiki.getcontact.model.base.GcEmail;
-import com.rhskiki.getcontact.model.base.GcName;
-import com.rhskiki.getcontact.model.base.GcPhone;
-import com.rhskiki.getcontact.model.base.GcPostal;
-import com.rhskiki.getcontact.model.base.GcWebsite;
+import com.rhskiki.getcontact.model.GcEmail;
+import com.rhskiki.getcontact.model.GcName;
+import com.rhskiki.getcontact.model.GcPhone;
+import com.rhskiki.getcontact.model.GcPostal;
+import com.rhskiki.getcontact.model.GcWebsite;
 import com.rhskiki.getcontact.utils.GetContactLog;
 import com.rhskiki.getcontact.utils.GetContactUtils;
 
@@ -56,49 +51,36 @@ public class GetContact {
         this.mContext = context;
     }
 
-    // ------------------------- GET ALL -----------------------
-
-    // Todo-test, status: (OK)
     public List<String> getAllEmails() {
        GetEmail getEmail = new GetEmail(mContext);
-        return getEmail.getSimple(GetContactUtils.NO_CONTACT_SELECTED);
+       return getEmail.getSimple(GetContactUtils.NO_CONTACT_SELECTED);
     }
 
-    // TODO-test, status: (OK)
-    // TODO-describe
     public List<String> getAllNames() {
         GetName getName = new GetName(mContext);
         return getName.getSimple(GetContactUtils.NO_CONTACT_SELECTED);
     }
 
-    // TODO-test
     public List<String> getAllPhone() {
         GetPhone getPhone = new GetPhone(mContext);
         return getPhone.getSimple(GetContactUtils.NO_CONTACT_SELECTED);
     }
 
-    // TODO-implement
     public List<String> getAllPostals() {
         GetPostal getPostal = new GetPostal(mContext);
         return getPostal.getSimple(GetContactUtils.NO_CONTACT_SELECTED);
     }
 
-    // TODO-implement
     public List<String> getAllWebsites() {
         GetWebsite getWebsite = new GetWebsite(mContext);
         return getWebsite.getSimple(GetContactUtils.NO_CONTACT_SELECTED);
     }
 
-    // -------------------- GET ALL DETAILS --------------------
-
-    // TODO-test
     public List<GcEmail> getAllEmailsDetails() {
-        IBaseGetContact<GcEmail> getEmail = new GetEmail(mContext);
+        GetEmail getEmail = new GetEmail(mContext);
         return getEmail.getDetails(GetContactUtils.NO_CONTACT_SELECTED);
     }
 
-    // TODO-test, status: (OK)
-    // TODO-describe
     public List<GcName> getAllNamesDetails() {
         GetName getName = new GetName(mContext);
         return getName.getDetails(GetContactUtils.NO_CONTACT_SELECTED);
@@ -119,18 +101,11 @@ public class GetContact {
         return getWebsite.getDetails(GetContactUtils.NO_CONTACT_SELECTED);
     }
 
-
-    // -------------------- GET CONTACT --------------------
-
-
-    // TODO-test
     public List<String> getContactEmails(int contactId) {
         GetEmail getEmail = new GetEmail(mContext);
         return getEmail.getSimple(contactId);
     }
 
-    // TODO-test
-    // TODO-describe
     public List<String> getContactNames(int contactId) {
         GetName getName = new GetName(mContext);
         return getName.getSimple(contactId);
@@ -151,17 +126,11 @@ public class GetContact {
         return getWebsite.getSimple(contactId);
     }
 
-    // ---------------- GET CONTACT DETAILS ----------------
-
-
-    // TODO-test
     public List<GcEmail> getContactEmailsDetails(int contactId) {
         GetEmail getEmail = new GetEmail(mContext);
         return getEmail.getDetails(contactId);
     }
 
-    // TODO-test
-    // TODO-describe
     public List<GcName> getContactNamesDetails(int contactId) {
         GetName getName = new GetName(mContext);
         return getName.getDetails(contactId);
@@ -182,18 +151,12 @@ public class GetContact {
         return getWebsite.getDetails(contactId);
     }
 
-
-
-    // ----------------------- THIS CLASSE ---------------------
-
-    // TODO for last.
     private List<GcContact> getContacts(int contactId) {
         // TODO implement.
         GetContactLog.d("To do implement");
         return null;
     }
 
-    // TODO for last.
     private GcContact getContactDetails(int contactId) {
         // TODO implement.
         GetContactLog.d("To do implement");

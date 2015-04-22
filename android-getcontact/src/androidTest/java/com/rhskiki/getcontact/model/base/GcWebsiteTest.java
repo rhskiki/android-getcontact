@@ -20,6 +20,8 @@ package com.rhskiki.getcontact.model.base;
 
 import android.test.InstrumentationTestCase;
 
+import com.rhskiki.getcontact.model.GcWebsite;
+
 /**
  * // TODO comment
  */

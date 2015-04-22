@@ -20,7 +20,7 @@ package com.rhskiki.getcontact.model.base;
 
 import android.test.InstrumentationTestCase;
 
-import com.rhskiki.getcontact.model.base.GcEmail;
+import com.rhskiki.getcontact.model.GcEmail;
 
 /**
  * // TODO comment

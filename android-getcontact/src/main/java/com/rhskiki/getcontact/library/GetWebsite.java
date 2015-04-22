@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.rhskiki.getcontact.library.base;
+package com.rhskiki.getcontact.library;
 
 import android.content.ContentResolver;
 import android.content.Context;
@@ -23,7 +23,7 @@ import android.net.Uri;
 import android.provider.ContactsContract;
 
 import com.rhskiki.getcontact.library.IBaseGetContact;
-import com.rhskiki.getcontact.model.base.GcWebsite;
+import com.rhskiki.getcontact.model.GcWebsite;
 import com.rhskiki.getcontact.utils.GetContactLog;
 import com.rhskiki.getcontact.utils.GetContactUtils;
 
@@ -105,7 +105,7 @@ public class GetWebsite implements IBaseGetContact {
      * This data contains label, type and url of the website.
      *
      * @param contactId Id of contact, if case 0 get all emails.
-     * @return List type {@link com.rhskiki.getcontact.model.base.GcWebsite} with datas.
+     * @return List type {@link com.rhskiki.getcontact.model.GcWebsite} with datas.
      * @see android.provider.ContactsContract.CommonDataKinds.Website
      */
     @Override
