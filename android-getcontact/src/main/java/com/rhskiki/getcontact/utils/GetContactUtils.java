@@ -40,4 +40,22 @@ public class GetContactUtils {
         }
         return true;
     }
+
+    public static class ParcelableId {
+
+        /** Parcelable id for class GcEmail */
+        public static int GCEMAIL = 0;
+
+        /** Parcelable id for class GcName */
+        public static int GCNAME = 1;
+
+        /** Parcelable id for class GcPhone */
+        public static int GCPHONE = 2;
+
+        /** Parcelable id for class GcPostal */
+        public static int GCPOSTAL = 3;
+
+        /** Parcelable id for class GcWebsite */
+        public static int GCWEBSITE = 4;
+    }
 }
