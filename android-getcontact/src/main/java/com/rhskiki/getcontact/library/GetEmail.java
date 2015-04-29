@@ -31,11 +31,8 @@ import java.util.List;
 
 /**
  * Class responsible for getting data from email contacts.
- *
- * @author rhskiki
- * @since 2015
  */
-public class GetEmail implements IBaseGetContact {
+public class GetEmail extends BaseGetContact<GcEmail> {
 
     /**
      * Context of the application.

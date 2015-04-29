@@ -32,7 +32,7 @@ import java.util.List;
 /**
  * Class responsible for getting data from webiste of contacts.
  */
-public class GetWebsite implements IBaseGetContact {
+public class GetWebsite  extends BaseGetContact<GcWebsite> {
 
     /**
      * Context of application.

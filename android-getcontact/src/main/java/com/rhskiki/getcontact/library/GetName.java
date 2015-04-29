@@ -32,7 +32,7 @@ import java.util.List;
 /**
  * Class responsible for getting data from names contacts.
  */
-public class GetName implements IBaseGetContact {
+public class GetName  extends BaseGetContact<GcName> {
 
     /**
      * Context of the application.

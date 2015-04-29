@@ -32,7 +32,7 @@ import java.util.List;
 /**
  * Class responsible for getting data from phone contacts.
  */
-public class GetPhone implements IBaseGetContact {
+public class GetPhone extends BaseGetContact<GcPhone> {
 
     /**
      * Context of the application.
