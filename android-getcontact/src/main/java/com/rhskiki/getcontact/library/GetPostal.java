@@ -32,7 +32,7 @@ import java.util.List;
 /**
  * Class responsible for getting data from postal contacts.
  */
-public class GetPostal implements IBaseGetContact {
+public class GetPostal extends BaseGetContact<GcPostal> {
 
     /**
      * Context of the application.
